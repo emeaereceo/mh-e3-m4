@@ -5,6 +5,7 @@ const contenedorPrincipal = document.getElementById(
   "imagen-principal-container"
 );
 
+console.log(thumbnails);
 // 2. Añadir Event Listener a los thumbnails
 thumbnails.forEach((thumbnail) => {
   thumbnail.addEventListener("click", (e) => {
@@ -16,7 +17,21 @@ thumbnails.forEach((thumbnail) => {
     imagenPrincipal.src = nuevaUrl;
     imagenPrincipal.alt = nuevoTextoAlt;
 
-    // c. sobreescribo contenido
+    // c. Eliminar pie de foto si existe
+    // const pieAnterior = document.getElementById("pie-de-foto");
+    // if (pieAnterior) {
+    // pieAnterior.remove()
+    // }
+
+    // d. Crear el nuevo elemento del parrafo
+    // const nuevoPie = document.createElement("p");
+    // nuevoPie.id = "pie-de-foto";
+    // nuevoPie.textContent = nuevoTextoAlt;
+
+    // e. Añadir el nuevo parrafo al contenedor
+    // contenedorPrincipal.appendChild(nuevoPie);
+
+    // refactor del pie, sobreescribo contenido
     let pie = document.getElementById("pie-de-foto");
     if (!pie) {
       // Si NO existe, lo creo por unica vez
